@@ -1574,6 +1574,7 @@ class ImageWorkshopLayer
         }
 
         unset($image);
+        return true;
     }
 
     // Checkers
