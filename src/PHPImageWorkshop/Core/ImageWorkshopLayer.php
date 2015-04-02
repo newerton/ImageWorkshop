@@ -1214,16 +1214,11 @@ class ImageWorkshopLayer
                 $degrees = 360 + $degrees;
             }
 
-<<<<<<< HEAD
-            // Rotate the layer background image
-            $imageRotated = imagerotate($this->image, -$degrees, imageColorAllocateAlpha($this->image, 0, 0, 0, 127));
-=======
             $transparentColor = imageColorAllocateAlpha($this->image, 0, 0, 0, 127);
             $rotationDegrees = ($degrees > 0) ? intval(360 * (1 - $degrees / 360)) : $degrees; // Used to fixed PHP >= 5.5 rotation with base angle 90°, 180°
 
             // Rotate the layer background image
             $imageRotated = imagerotate($this->image, $rotationDegrees, $transparentColor);
->>>>>>> upstream/master
             imagealphablending($imageRotated, true);
             imagesavealpha($imageRotated, true);
 
@@ -1561,16 +1556,6 @@ class ImageWorkshopLayer
 
             $isSaved = imagegif($image, $filename);
 
-<<<<<<< HEAD
-                    imagepng($image, $filename, $imageQuality);
-                    unset($image);
-                }
-                return true;
-            }
-            return false;
-        }
-        return false;
-=======
         } elseif ($extension == 'png') {
 
             $imageQuality = $imageQuality / 10;
@@ -1589,7 +1574,6 @@ class ImageWorkshopLayer
         }
 
         unset($image);
->>>>>>> upstream/master
     }
 
     // Checkers
